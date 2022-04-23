@@ -16,9 +16,6 @@
       <div class="nav-item">
         Home
       </div>
-      <div class="nav-item">
-        Categories
-      </div>
     </div>
 
     <div class="nav-items">
@@ -28,6 +25,32 @@
     </div>
   </nav>
   <!-- navbar ends -->
+
+  <!-- categories starts -->
+
+  <div class="categories">
+    <h1 class="title">Categories</h1>
+    <select name="categories" id="categories">
+      <option value="">-------------</option>
+      <option value="Agile development">Agile development</option>
+      <option value="Python development">Python development</option>
+      <option value="PHP development">PHP development</option>
+      <option value="ASP.NET development">ASP.NET development</option>
+      <option value="WordPress development">WordPress development</option>
+      <option value="MoDx development">MoDx development</option>
+      <option value="Grok development">Grok development</option>
+      <option value="Client-side development">Client-side development</option>
+      <option value="Java development">Java development</option>
+      <option value="Full-stack development">Full-stack development</option>
+      <option value="Perl development">Perl development</option>
+      <option value="Haskell development">Haskell development</option>
+    </select>
+  </div>
+
+  <!-- categories ends -->
+
+  <br>
+  <hr>
 
   <!-- list of books starts -->
 
@@ -44,7 +67,7 @@
         <span>Year Published</span>
       </div>
       <div class="mt-3 mb-3">
-        <button class="add-reading-list">Add to Reading List</button>
+        <button class="button">Add to Reading List</button>
       </div>
     </div>
 
@@ -55,16 +78,18 @@
 
       <div class="description">
         <h3>Title</h3>
-        <span>year Published</span>
+        <span>Year Published</span>
       </div>
 
       <div class="mt-3 mb-3">
-        <button class="add-reading-list">Add to Reading List</button>
+        <button class="button">Add to Reading List</button>
       </div>
     </div>
   </div>
 
   <!-- list of books ends -->
+
+  <button type="button" id="sort-button" class="button">Sort</button>
 
   <script src="index.js"></script>
 </body>
