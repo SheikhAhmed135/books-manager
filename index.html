@@ -10,122 +10,234 @@
 </head>
 
 <body>
-  <!-- navbar starts -->
-  <nav>
-    <div class="nav-items">
-      <div class="nav-item">
-        Home
+  <div class="main-screen">
+    <!-- navbar starts -->
+    <nav>
+      <div class="nav-items">
+        <div class="nav-item">
+          Home
+        </div>
+      </div>
+
+      <div class="nav-items">
+        <div class="nav-item">
+          Reading List
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends -->
+
+    <!-- categories starts -->
+
+    <div class="categories">
+      <h1 class="title">Categories</h1>
+      <select name="categories" id="categories">
+        <option value="">-------------</option>
+        <option value="Agile development">Agile development</option>
+        <option value="Python development">Python development</option>
+        <option value="PHP development">PHP development</option>
+        <option value="ASP.NET development">ASP.NET development</option>
+        <option value="WordPress development">WordPress development</option>
+        <option value="MoDx development">MoDx development</option>
+        <option value="Grok development">Grok development</option>
+        <option value="Client-side development">Client-side development</option>
+        <option value="Java development">Java development</option>
+        <option value="Full-stack development">Full-stack development</option>
+        <option value="Perl development">Perl development</option>
+        <option value="Haskell development">Haskell development</option>
+      </select>
+    </div>
+
+    <!-- categories ends -->
+
+    <br>
+    <hr>
+
+    <!-- list of books starts -->
+
+    <h1 class="title m-3">List of Books</h1>
+
+    <div class="books-list">
+      <div class="book">
+        <div class="cover">
+          <img src="pause.png" alt="book-cover" width="200px">
+        </div>
+
+        <div class="description">
+          <h3>Title</h3>
+          <span>Year Published</span>
+        </div>
+        <div class="mt-3 mb-3">
+          <button class="button">Add to Reading List</button>
+        </div>
+        <!-- book details to toggle -->
+        <div class="hidden">
+          <ul class="details">
+            <li>Id: <p>id</p>
+            </li>
+            <li>By: <p>author</p>
+            </li>
+            <li>Edition: <p>Edition</p>
+            </li>
+            <li>Number of pages: <p>pgno</p>
+            </li>
+          </ul>
+
+          <h4>Description:</h4>
+          <p>{description}</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="cover">
+          <img src="pause.png" alt="book-cover" width="200px">
+        </div>
+
+        <div class="description">
+          <h3>Title</h3>
+          <span>Year Published</span>
+        </div>
+
+        <div class="mt-3 mb-3">
+          <button class="button">Add to Reading List</button>
+        </div>
+
+        <!-- book details to toggle -->
+
+        <div class="hidden">
+          <ul class="details">
+            <li>Id: <p>id</p>
+            </li>
+            <li>By: <p>author</p>
+            </li>
+            <li>Edition: <p>Edition</p>
+            </li>
+            <li>Number of pages: <p>pgno</p>
+            </li>
+          </ul>
+
+          <h4>Description:</h4>
+          <p>{description}</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+        </div>
       </div>
     </div>
 
-    <div class="nav-items">
-      <div class="nav-item">
-        Reading List
-      </div>
-    </div>
-  </nav>
-  <!-- navbar ends -->
+    <!-- list of books ends -->
 
-  <!-- categories starts -->
-
-  <div class="categories">
-    <h1 class="title">Categories</h1>
-    <select name="categories" id="categories">
-      <option value="">-------------</option>
-      <option value="Agile development">Agile development</option>
-      <option value="Python development">Python development</option>
-      <option value="PHP development">PHP development</option>
-      <option value="ASP.NET development">ASP.NET development</option>
-      <option value="WordPress development">WordPress development</option>
-      <option value="MoDx development">MoDx development</option>
-      <option value="Grok development">Grok development</option>
-      <option value="Client-side development">Client-side development</option>
-      <option value="Java development">Java development</option>
-      <option value="Full-stack development">Full-stack development</option>
-      <option value="Perl development">Perl development</option>
-      <option value="Haskell development">Haskell development</option>
-    </select>
+    <!-- button to sort books -->
+    <button type="button" id="sort-button" class="button">Sort</button>
   </div>
 
-  <!-- categories ends -->
+  <!-- reading list screen starts -->
 
-  <br>
-  <hr>
-
-  <!-- list of books starts -->
-
-  <h1 class="title m-3">List of Books</h1>
-
-  <div class="books-list">
-    <div class="book">
-      <div class="cover">
-        <img src="pause.png" alt="book-cover" width="200px">
+  <div class="reading-screen hidden">
+    <!-- navbar starts -->
+    <nav>
+      <div class="nav-items">
+        <div class="nav-item">
+          Home
+        </div>
       </div>
 
-      <div class="description">
-        <h3>Title</h3>
-        <span>Year Published</span>
+      <div class="nav-items">
+        <div class="nav-item">
+          Main
+        </div>
       </div>
-      <div class="mt-3 mb-3">
-        <button class="button">Add to Reading List</button>
-      </div>
-      <!-- book details to toggle -->
-      <div class="hidden">
-        <ul class="details">
-          <li>Id: <p>id</p>
-          </li>
-          <li>By: <p>author</p>
-          </li>
-          <li>Edition: <p>Edition</p>
-          </li>
-          <li>Number of pages: <p>pgno</p>
-          </li>
-        </ul>
+    </nav>
+    <!-- navbar ends -->
 
-        <h4>Description:</h4>
-        <p>{description}</p>
-        <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+    <!-- list of books starts -->
+
+    <h1 class="title m-3">Reading List</h1>
+
+    <div class="books-list">
+      <div class="book">
+        <div class="cover">
+          <img src="pause.png" alt="book-cover" width="200px">
+        </div>
+
+        <div class="description">
+          <h3>Title</h3>
+          <span>Year Published</span>
+        </div>
+        <div class="mt-3 mb-3">
+          <button class="button">Add to Reading List</button>
+        </div>
+        <!-- book details to toggle -->
+        <div class="modal hidden">
+          <div class="modal-content">
+            <div class="cover">
+              <img src="pause.png" alt="book-cover" width="200px">
+            </div>
+            <div class="book-data">
+              <ul class="details">
+                <li>Id: <p>id</p>
+                </li>
+                <li>By: <p>author</p>
+                </li>
+                <li>Edition: <p>Edition</p>
+                </li>
+                <li>Number of pages: <p>pgno</p>
+                </li>
+              </ul>
+
+              <h4>Description:</h4>
+              <p>{description}</p>
+              <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="cover">
+          <img src="pause.png" alt="book-cover" width="200px">
+        </div>
+
+        <div class="description">
+          <h3>Title</h3>
+          <span>Year Published</span>
+        </div>
+
+        <div class="mt-3 mb-3">
+          <button class="button">Add to Reading List</button>
+        </div>
+
+        <!-- book details to toggle -->
+
+        <div class="modal hidden">
+          <div class="modal-content">
+            <div class="cover">
+              <img src="pause.png" alt="book-cover" width="200px">
+            </div>
+            <div class="book-data">
+              <ul class="details">
+                <li>Id: <p>id</p>
+                </li>
+                <li>By: <p>author</p>
+                </li>
+                <li>Edition: <p>Edition</p>
+                </li>
+                <li>Number of pages: <p>pgno</p>
+                </li>
+              </ul>
+
+              <h4>Description:</h4>
+              <p>{description}</p>
+              <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="book">
-      <div class="cover">
-        <img src="pause.png" alt="book-cover" width="200px">
-      </div>
-
-      <div class="description">
-        <h3>Title</h3>
-        <span>Year Published</span>
-      </div>
-
-      <div class="mt-3 mb-3">
-        <button class="button">Add to Reading List</button>
-      </div>
-      
-      <!-- book details to toggle -->
-
-      <div class="hidden">
-        <ul class="details">
-          <li>Id: <p>id</p>
-          </li>
-          <li>By: <p>author</p>
-          </li>
-          <li>Edition: <p>Edition</p>
-          </li>
-          <li>Number of pages: <p>pgno</p>
-          </li>
-        </ul>
-
-        <h4>Description:</h4>
-        <p>{description}</p>
-        <a href="#" target="_blank" rel="noopener noreferrer">Link</a>
-      </div>
-    </div>
+    <!-- list of books ends -->
   </div>
 
-  <!-- list of books ends -->
-
-  <button type="button" id="sort-button" class="button">Sort</button>
+  <!-- reading list screen ends -->
 
   <script src="index.js"></script>
 </body>
