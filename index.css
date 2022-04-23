@@ -80,6 +80,16 @@ nav {
   color: rgb(147, 146, 146);
 }
 
+.details {
+  list-style: none;
+}
+.details li {
+  display: flex;
+}
+.details p {
+  color: #d22128;
+}
+
 .button {
   background-color: #d22128;
   color: #fff;
