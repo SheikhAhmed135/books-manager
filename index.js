@@ -1,4 +1,5 @@
 let readingList = []
+let books = []
 let rlcount = 0
 let counter = document.querySelectorAll(".rl-counter")
 let sortElem = document.getElementById("sorting")
@@ -260,11 +261,22 @@ function renderBooks(books) {
     }
 }
 
-
-window.addEventListener("load", function () {
+function onFetch() {
+    books = JSON.parse(this.responseText).books
     generateCategories()
     renderCategories()
     renderBooks(sortBooks(books))
     hideErrorOnClick()
+}
+
+function fetchJSON() {
+    var req = new XMLHttpRequest();
+    req.addEventListener("load", onFetch);
+    req.open("GET", "/books-data.json");
+    req.send();
+}
+
+window.addEventListener("load", function () {
+    fetchJSON()
 })
 
