@@ -5,26 +5,6 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.m-3 {
-  margin: 1rem;
-}
-.mt-3 {
-  margin-top: 1rem;
-}
-.mb-3 {
-  margin-bottom: 1rem;
-}
-
-.main-screen {
-  background-color: #fff;
-  color: inherit;
-}
-
-.reading-screen {
-  background-color: #303030;
-  color: #fff;
-}
-
 nav {
   display: flex;
   flex-direction: row;
@@ -46,11 +26,19 @@ nav {
   margin: 0 10px;
 }
 
-.categories {
-  text-align: center;
+.filter {
+  text-align: left;
 }
 
-.categories select {
+.filter > div {
+  width: 300px;
+  margin: 2px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.filter select {
   height: 26px;
   padding: 3.5px 12px;
   font-size: 12px !important;
@@ -58,7 +46,22 @@ nav {
   color: #333533 !important;
   border: 1px solid #333533;
   border-radius: 5px;
-  margin: 0 !important;
+  width: 200px;
+  margin-left: auto;
+  display: flex;
+}
+.filter button {
+  height: 26px;
+  padding: 3.5px 12px;
+  font-size: 12px !important;
+  background-color: #fff;
+  color: #333533 !important;
+  border: 1px solid #333533;
+  border-radius: 5px;
+  width: 200px;
+  margin-left: auto;
+  text-align: center;
+  cursor: pointer;
 }
 
 .title {
@@ -68,13 +71,19 @@ nav {
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
 }
 
-.books-list {
+#books-list,
+#rlbooks-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   width: 100%;
+}
+.cover {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .book {
@@ -82,21 +91,73 @@ nav {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 5px 5px 5px 0px #ccc;
-  padding: 10px;
-  transition: all 0.3s ease-in;
-}
-
-.book h3 {
-  color: #d22128;
-}
-
-.reading-screen .book {
-  background-color: #fff;
-  box-shadow: none;
+  padding: 10px 10px 40px 10px;
+  width: 200px;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .book span {
   color: rgb(147, 146, 146);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.add-reading-list {
+  background-color: #d22128;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px 2px #ccc;
+  cursor: pointer;
+  margin: auto 1rem 0px 1rem;
+  display: block;
+  /* margin-bottom: auto; */
+}
+
+.rl-counter {
+  background: #333;
+  color: #fff;
+  border-radius: 1.25em;
+  text-align: center;
+  padding: 0px 5px;
+  font-size: 12px;
+  border: 2px solid #b10f14;
+}
+.rl-counter:empty {
+  display: none;
+}
+#sort-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+#rl-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#rl-error.visible {
+  display: flex;
+}
+.error-msg {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+  margin: auto;
 }
 
 .details {
@@ -104,9 +165,11 @@ nav {
 }
 .details li {
   display: flex;
+  margin: 8px;
 }
 .details p {
   color: #d22128;
+  margin-left: 4px;
 }
 
 .button {
@@ -129,8 +192,12 @@ nav {
   right: 50px;
 }
 
-.hidden {
+.book .to-hide {
   display: none;
+}
+.book.open .to-hide {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .modal {
@@ -141,8 +208,8 @@ nav {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal-content {
@@ -152,11 +219,19 @@ nav {
   border: 1px solid #888;
   width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-
-.cover {
-  margin: 10px;
+.modal-content {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+#rl-switch {
+  cursor: pointer;
+}
+#main-switch {
+  cursor: pointer;
 }
