@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +11,102 @@
 </head>
 
 <body>
-  <nav>
+  
 
+<div class="main-screen">
+    <!-- navbar starts -->
+  <nav>
+    <div class="nav-items">
+      <div class="nav-item">
+        Home
+      </div>
+    </div>
+
+    <div class="nav-items">
+      <div class="nav-item" id="rl-switch">
+        Reading List
+        <span class="rl-counter"></span>
+      </div>
+    </div>
   </nav>
-  <h1>Main page</h1>
+  <!-- navbar ends -->
+
+  <h1 class="title">List of Books</h1>
+  
+  <!-- filter starts -->
+  <div class="filter">
+    <div>
+      <span>Categories: </span>
+      <select name="categories" id="categories">
+        <option value="">-------------</option>
+      </select>
+    </div>
+    <div>
+
+      <span>Sort: </span>
+      <button id="sorting">
+        Ascending
+      </select>
+    </div>
+  </div>
+
+  <!-- filter ends -->
+  <br>
+  <hr>
+  <!-- list of books starts -->
+
+
+
+  <div id="books-list">
+   
+  </div>
+
+  <!-- list of books ends -->
+
+  <div id="rl-error" class="">
+    <div class="error-msg">
+      <h1 class="title">Book has Already been added</h1>
+    </div>
+  </div>
+</div>
+
+  <!-- reading list screen starts -->
+
+  <div class="reading-screen hidden">
+    <!-- navbar starts -->
+    <nav>
+      <div class="nav-items" >
+        <div class="nav-item" id="main-switch">
+          Home
+        </div>
+      </div>
+      <div class="nav-items">
+        <div class="nav-item" >
+          Reading List
+          <span class="rl-counter"></span>
+        </div>
+      </div>
+
+    </nav>
+    <!-- navbar ends -->
+
+    <!-- list of books starts -->
+
+    <h1 class="title m-3">Reading List</h1>
+
+    <div id="rlbooks-list">
+      
+    </div>
+
+    <!-- list of books ends -->
+  </div>
+
+  <!-- reading list screen ends -->
+
+  <!-- reading list screen ends -->
+
+
+  <script src="data.js"></script>
   <script src="index.js"></script>
 </body>
 
