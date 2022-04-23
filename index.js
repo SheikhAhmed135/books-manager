@@ -72,36 +72,34 @@ function renderCategories() {
     }
 }
 
-function increaseCount() {
+function increaseCount(readingList) {
     rlcount += 1
     counter.forEach(function (el) {
         el.innerText = rlcount
     })
-    renderRLBooks()
+    renderRLBooks(readingList)
 }
-function decreaseCount() {
+function decreaseCount(readingList) {
     rlcount -= 1
-    if (rlcount < 1) {
-        counter.innerText = ""
-    } else {
-        counter.innerText = rlcount
-    }
-    renderRLBooks()
+    counter.forEach(function (el) {
+        if (rlcount < 1) {
+            el.innerText = ""
+        } else {
+            el.innerText = rlcount
+        }
+    })
+    renderRLBooks(readingList)
 }
 
 function addBook(id) {
     let index = readingList.findIndex(function (book) {
         return book.id === id
     })
-    console.log(books.find(function (book) {
-        return book.id === id
-    }))
     if (index === -1) {
-        increaseCount()
-        readingList =
-            books.find(function (book) {
-                return book.id === id
-            })
+        readingList = [...readingList, books.find(function (book) {
+            return book.id === id
+        })]
+        increaseCount(readingList)
 
     } else {
         document.getElementById("rl-error").classList.add("visible")
@@ -116,7 +114,7 @@ function removeBook(id) {
         readingList = readingList.filter(function (book) {
             return book.id !== id
         })
-        decreaseCount()
+        decreaseCount(readingList)
     }
 }
 
@@ -128,7 +126,7 @@ function hideErrorOnClick() {
     })
 }
 
-function renderRLBooks() {
+function renderRLBooks(readingList) {
     let booksCont = document.getElementById("rlbooks-list")
     booksCont.textContent = '';
     console.log(readingList)
